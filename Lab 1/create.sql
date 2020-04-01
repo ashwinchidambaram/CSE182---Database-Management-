@@ -30,3 +30,13 @@ CREATE TABLE Animals(
 	cageID INT,
 	PRIMARY KEY (animalID)
 );
+
+CREATE TABLE Members(
+	memberID INT,
+	name VARCHAR(30),
+	address VARCHAR(40),
+	memberStatus CHAR(1),
+	joinDate DATE,
+	expirationDate DATE,
+	PRIMARY KEY (memberID)
+);
