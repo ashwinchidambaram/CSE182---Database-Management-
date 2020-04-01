@@ -13,3 +13,11 @@ CREATE TABLE Cages(
 	keeperID INT,
 	PRIMARY KEY (cageID)
 );
+
+CREATE TABLE Species(
+	speciesID INT,
+	speciesName VARCHAR(40),
+	genus VARCHAR(40),
+	animalCount INT,
+	PRIMARY KEY (speciesID)
+);
