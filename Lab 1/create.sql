@@ -5,4 +5,11 @@ CREATE TABLE Keepers(
 	keeperLevel CHAR(1),
 	keeperSalary NUMERIC(5,2),
 	PRIMARY KEY (keeperID)
-)
+);
+
+CREATE TABLE Cages(
+	cageID INT,
+	cageSector CHAR(1),
+	keeperID INT,
+	PRIMARY KEY (cageID)
+);
