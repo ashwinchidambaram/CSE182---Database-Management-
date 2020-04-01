@@ -1,3 +1,12 @@
+/* #########################
+##    Lab Assignment 1    ##
+############################
+## Ashwin Chidambaram     ##
+## 04/01/2020             ##
+## create.sql             ##
+######################### */
+
+-- Create Keepers Table
 CREATE TABLE Keepers(
 	keeperID INT,
 	name VARCHAR(30),
@@ -7,6 +16,7 @@ CREATE TABLE Keepers(
 	PRIMARY KEY (keeperID)
 );
 
+-- Create Cages Table
 CREATE TABLE Cages(
 	cageID INT,
 	cageSector CHAR(1),
@@ -14,6 +24,7 @@ CREATE TABLE Cages(
 	PRIMARY KEY (cageID)
 );
 
+-- Create Species Table
 CREATE TABLE Species(
 	speciesID INT,
 	speciesName VARCHAR(40),
@@ -22,6 +33,7 @@ CREATE TABLE Species(
 	PRIMARY KEY (speciesID)
 );
 
+-- Create Animals Table
 CREATE TABLE Animals(
 	animalID INT,
 	name VARCHAR(30),
@@ -31,6 +43,7 @@ CREATE TABLE Animals(
 	PRIMARY KEY (animalID)
 );
 
+-- Create Members Table
 CREATE TABLE Members(
 	memberID INT,
 	name VARCHAR(30),
@@ -41,6 +54,7 @@ CREATE TABLE Members(
 	PRIMARY KEY (memberID)
 );
 
+-- Create CaveVisits Table
 CREATE TABLE CageVisits(
 	memeberID INT,
 	cageID INT,
