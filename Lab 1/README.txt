@@ -12,3 +12,6 @@ Files Included:
 
   - create.sql            | Create Tables script
   - README.txt            | README file
+
+Summary:
+Within this lab we primarily focused on practice with creating and dropping tables. Additionally, for each table, we created attributes each with an assigned data type.
