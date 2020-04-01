@@ -40,3 +40,11 @@ CREATE TABLE Members(
 	expirationDate DATE,
 	PRIMARY KEY (memberID)
 );
+
+CREATE TABLE CageVisits(
+	memeberID INT,
+	cageID INT,
+	visitDate DATE,
+	likedVisit BOOL,
+	PRIMARY KEY (memeberID, cageID, visitDate)
+);
