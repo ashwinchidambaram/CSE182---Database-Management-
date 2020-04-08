@@ -6,13 +6,17 @@
 ## create.sql             ##
 ######################### */
 
+-- Reset Lab 1 Schema
+DROP SCHEMA Lab1 CASCADE;
+CREATE SCHEMA Lab1;
+
 -- Create Keepers Table
 CREATE TABLE Keepers(
-	keeperID INT,
+	keeperID INTEGER,
 	name VARCHAR(30),
 	hireDate DATE,
 	keeperLevel CHAR(1),
-	keeperSalary NUMERIC(5,2),
+	keeperSalary NUMERIC(7,2),
 	PRIMARY KEY (keeperID)
 );
 
