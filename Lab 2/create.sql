@@ -48,6 +48,7 @@ CREATE TABLE Animals(
 	PRIMARY KEY (animalID),
 	FOREIGN KEY (speciesID) REFERENCES Species,
 	FOREIGN KEY (cageID) REFERENCES Cages,
+	
   UNIQUE (name, speciesID)
 );
 
