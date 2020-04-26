@@ -1,20 +1,20 @@
 /* #########################
-##### Lab Assignment 1 #####
+##### Lab Assignment 2 #####
 ############################
 ## Ashwin Chidambaram     ##
-## 04/01/2020             ##
+## 04/25/2020             ##
 ## create.sql             ##
 ######################### */
 
--- Reset Lab 1 Schema
-DROP SCHEMA Lab1 CASCADE;
-CREATE SCHEMA Lab1;
+-- Reset Lab 2 Schema
+DROP SCHEMA Lab2 CASCADE;
+CREATE SCHEMA Lab2;
 
 -- Create Keepers Table
 CREATE TABLE Keepers(
 	keeperID INT,
 	name VARCHAR(30),
-	hireDate DATE,
+	hireDate DATE NOT NULL,
 	keeperLevel CHAR(1),
 	keeperSalary NUMERIC(7,2),
 	PRIMARY KEY (keeperID)
@@ -23,7 +23,7 @@ CREATE TABLE Keepers(
 -- Create Cages Table
 CREATE TABLE Cages(
 	cageID INT,
-	cageSector CHAR(1),
+	cageSector CHAR(1) NOT NULL,
 	keeperID INT,
 	PRIMARY KEY (cageID),
 	FOREIGN KEY (keeperID) REFERENCES Keepers
@@ -32,7 +32,7 @@ CREATE TABLE Cages(
 -- Create Species Table
 CREATE TABLE Species(
 	speciesID INT,
-	speciesName VARCHAR(40),
+	speciesName VARCHAR(40) UNIQUE NOT NULL,
 	genus VARCHAR(40),
 	animalCount INT,
 	PRIMARY KEY (speciesID)
@@ -47,7 +47,8 @@ CREATE TABLE Animals(
 	cageID INT,
 	PRIMARY KEY (animalID),
 	FOREIGN KEY (speciesID) REFERENCES Species,
-	FOREIGN KEY (cageID) REFERENCES Cages
+	FOREIGN KEY (cageID) REFERENCES Cages,
+  UNIQUE (name, speciesID)
 );
 
 -- Create Members Table
@@ -58,16 +59,18 @@ CREATE TABLE Members(
 	memberStatus CHAR(1),
 	joinDate DATE,
 	expirationDate DATE,
-	PRIMARY KEY (memberID)
+	PRIMARY KEY (memberID),
+
+  UNIQUE (name, address)
 );
 
 -- Create CaveVisits Table
 CREATE TABLE CageVisits(
-	memeberID INT,
+	memberID INT,
 	cageID INT,
 	visitDate DATE,
 	likedVisit boolean,
-	PRIMARY KEY (memeberID, cageID, visitDate),
+	PRIMARY KEY (memberID, cageID, visitDate),
 	FOREIGN KEY (cageID) REFERENCES Cages,
 	FOREIGN KEY (memberID) REFERENCES Members
 );
