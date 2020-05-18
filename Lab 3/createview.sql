@@ -1,3 +1,11 @@
+/* #########################
+##### Lab Assignment 3 #####
+############################
+## Ashwin Chidambaram     ##
+## 05/17/2020             ##
+## createview.sql         ##
+######################### */
+
 CREATE VIEW viewComputedCount AS
 SELECT Species.speciesID, COUNT(animalID) AS computedAnimalCount
 FROM Species

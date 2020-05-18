@@ -22,4 +22,20 @@ INNER JOIN Animals ON Cages.cageID = Animals.cageID
 WHERE speciesID IN (SELECT speciesID
 				   FROM Species
 				   WHERE speciesName = 'lion' or speciesName = 'tiger')
-ORDER BY keeperSalary DESC, name DESC
+ORDER BY keeperSalary DESC, name
+
+SELECT DISTINCT *
+FROM Cages
+INNER JOIN Keepers ON Cages.keeperID = Keepers.keeperID
+INNER JOIN Animals ON Cages.cageID = Animals.cageID
+INNER JOIN Species ON Animals.speciesID = Species.speciesID
+WHERE speciesName = 'lion' or speciesName = 'tiger' AND
+
+
+SELECT DISTINCT(Keepers.keeperID), Keepers.name, Keepers.keeperSalary
+FROM Cages
+INNER JOIN Keepers ON Cages.keeperID = Keepers.keeperID
+INNER JOIN Animals ON Cages.cageID = Animals.cageID
+INNER JOIN Species ON Animals.speciesID = Species.speciesID
+WHERE speciesName = 'lion' or speciesName = 'tiger' AND Cages.cageID = Animals.cageID AND Cages.cageID = Animals.cageID
+ORDER BY keeperSalary DESC, name 

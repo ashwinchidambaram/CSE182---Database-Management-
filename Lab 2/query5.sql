@@ -21,7 +21,7 @@
 ## duplicates should appear in your result.                                     ##
 ############################################################################### */
 
-SELECT Animals.animalID, Cages.cageID, Animals.animalAge, Keepers.keeperID, Keepers.hireDate
+SELECT Animals.animalID AS theAnimalID, Cages.cageID as theCageID, Animals.animalAge AS theAge, Keepers.keeperID AS theKeeperID, Keepers.hireDate AS theHireDate
 FROM Keepers
 INNER JOIN Cages ON Cages.keeperID = Keepers.keeperID
 INNER JOIN CageVisits ON Cages.cageID = CageVisits.cageID

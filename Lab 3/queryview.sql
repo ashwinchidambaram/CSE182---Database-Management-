@@ -1,3 +1,10 @@
+/* #########################
+##### Lab Assignment 3 #####
+############################
+## Ashwin Chidambaram     ##
+## 05/17/2020             ##
+## queryview.sql          ##
+######################### */
 
 -- Part 1
 SELECT Species.speciesID, speciesName, animalCount, computedAnimalCount
